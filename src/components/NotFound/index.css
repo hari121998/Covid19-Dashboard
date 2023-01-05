@@ -1,0 +1,55 @@
+.not-found-route-container {
+  background-color: #161625;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  text-align: center;
+}
+
+.not-found-route-container h1 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  color: #cbd5e1;
+  margin: 32px 0 16px 0;
+}
+.not-found-route-container p {
+  margin: 0 0 32px 0;
+  color: #94a3b8;
+  line-height: 32px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.not-found-route-container button {
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .not-found-route-container img {
+    width: 242px;
+  }
+  .not-found-route-container h1 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 24px 0 8px 0;
+  }
+  .not-found-route-container p {
+    margin: 0 0 24px 0;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .not-found-route-container button {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
