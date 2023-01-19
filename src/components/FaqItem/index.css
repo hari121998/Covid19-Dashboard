@@ -1,0 +1,14 @@
+.faq-item-container {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+}
+.faq-item-container h4 {
+  color: #94a3b8;
+  margin: 0;
+}
+.faq-item-container p {
+  color: #007bff;
+  margin: 12px 0 24px 0;
+}

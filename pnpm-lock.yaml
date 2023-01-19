@@ -6,6 +6,7 @@ specifiers:
   '@testing-library/user-event': 12.6.2
   '@wojtekmaj/enzyme-adapter-react-17': 0.6.3
   chalk: 4.1.0
+  dateformat: 5.0.3
   enzyme: 3.11.0
   eslint-config-airbnb: 18.2.1
   eslint-config-prettier: 8.1.0
@@ -24,6 +25,7 @@ specifiers:
   react-router-dom: 5.3.0
   react-scripts: 4.0.3
   react-select: 4.3.1
+  reactjs-popup: 2.0.5
   recharts: 2.1.5
 
 dependencies:
@@ -32,6 +34,7 @@ dependencies:
   '@testing-library/user-event': 12.6.2
   '@wojtekmaj/enzyme-adapter-react-17': 0.6.3_ed988ebff08079c40ff9e87e2acc78b3
   chalk: 4.1.0
+  dateformat: 5.0.3
   enzyme: 3.11.0
   history: 5.0.1
   js-cookie: 3.0.1
@@ -42,6 +45,7 @@ dependencies:
   react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
   react-router-dom: 5.3.0_react@17.0.1
   react-select: 4.3.1_react-dom@17.0.1+react@17.0.1
+  reactjs-popup: 2.0.5_react-dom@17.0.1+react@17.0.1
   recharts: 2.1.5_react-dom@17.0.1+react@17.0.1
 
 devDependencies:
@@ -5731,6 +5735,11 @@ packages:
       whatwg-mimetype: 2.3.0
       whatwg-url: 8.7.0
     dev: true
+
+  /dateformat/5.0.3:
+    resolution: {integrity: sha512-Kvr6HmPXUMerlLcLF+Pwq3K7apHpYmGDVqrxcDasBg86UcKeTSNWbEzU8bwdXnxnR44FtMhJAxI4Bov6Y/KUfA==}
+    engines: {node: '>=12.20'}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -11777,6 +11786,17 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+    dev: false
+
+  /reactjs-popup/2.0.5_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-b5hv9a6aGsHEHXFAgPO5s1Jw1eSkopueyUVxQewGdLgqk2eW0IVXZrPRpHR629YcgIpC2oxtX8OOZ8a7bQJbxA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
     dev: false
 
   /read-pkg-up/7.0.1:

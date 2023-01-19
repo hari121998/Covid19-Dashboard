@@ -26,3 +26,7 @@
   color: #e2e8f0;
   margin: 32px 0;
 }
+.faq-unordered-list-container {
+  list-style: none;
+  padding: 0;
+}

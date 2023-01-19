@@ -1,0 +1,158 @@
+.state-specific-route-container {
+  padding: 60px 150px;
+  background-color: #161625;
+  min-height: 82vh;
+}
+.state-specific-state-name-tested {
+  display: flex;
+  justify-content: space-between;
+}
+.state-specific-heading-update h2 {
+  background-color: #0284c729;
+  padding: 10px 30px;
+  border: 0 solid;
+  border-radius: 32px;
+  font-weight: 600;
+  margin: 0;
+  color: #0ea5e9;
+}
+.state-specific-heading-update p {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 12px 0 0 0;
+  color: #cbd5e1;
+}
+.state-tested-name {
+  font-weight: 500;
+  font-size: 16px;
+  color: #94a3b8;
+  text-align: right;
+  margin: 0;
+}
+.state-tested-count {
+  font-weight: 500;
+  font-size: 24px;
+  text-align: right;
+  color: #94a3b8;
+  margin: 4px 0 0 0;
+}
+.state-specific-stats-list-container {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  margin: 40px 0;
+}
+.state-specific-stats-list-container li {
+  text-align: center;
+  margin-right: 25px;
+  width: 200px;
+  padding: 30px 20px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  border-radius: 12px;
+}
+.state-specific-stats-list-container li h3 {
+  font-size: 16px;
+  margin: 0;
+}
+.state-specific-stats-list-container li img {
+  margin: 24px 0;
+}
+.state-specific-stats-list-container li p {
+  font-size: 24px;
+  margin: 0;
+}
+.state-specific-confirmed-cases {
+  color: #ff073a;
+}
+.state-specific-active-cases {
+  color: #007bff;
+}
+.state-specific-recovered-cases {
+  color: #28a745;
+}
+.state-specific-deceased-cases {
+  color: #6c757d;
+}
+.state-specific-confirmed-cases:hover,
+.active-confirmed {
+  background-color: #331427;
+}
+.state-specific-active-cases:hover,
+.active-active {
+  background-color: #132240;
+}
+.state-specific-recovered-cases:hover,
+.active-recovered {
+  background-color: #182829;
+}
+.state-specific-deceased-cases:hover,
+.active-deceased {
+  background-color: #212230;
+}
+.top-districts-container h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  color: #ff073a;
+  margin: 0;
+}
+
+.top-districts-container ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Roboto';
+  font-weight: 500;
+  color: #94a3b8;
+}
+.top-districts-container ul li {
+  margin: 0 45px 25px 0;
+  width: 20%;
+}
+.top-district-count {
+  font-size: 20px;
+  margin-right: 15px;
+}
+.top-district-name {
+  font-size: 16px;
+}
+.specific-covid-bar-chart-con {
+  display: flex;
+  justify-content: center;
+}
+.line-chart-con {
+  height: 328px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+  border-radius: 12px;
+}
+.confirmed-line-chart-con {
+  background-color: #331427;
+}
+.active-line-chart-con {
+  background-color: #132240;
+}
+.recovered-line-chart-con {
+  background-color: #182829;
+}
+.deceased-line-chart-con {
+  background-color: #1c1c2b;
+}
+.tested-line-chart-con {
+  background-color: #230f41;
+}
+.daily-spread-heading {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 32px;
+  color: #cbd5e1;
+}

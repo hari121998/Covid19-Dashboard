@@ -1,0 +1,142 @@
+.home-page-container {
+  padding: 64px 150px;
+  background-color: #161625;
+  min-height: 86.5vh;
+}
+.form-input-container {
+  padding-left: 30px;
+  width: 60%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background-color: #2f2f43;
+}
+.home-search-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-input-container input {
+  padding: 18px 8px;
+  width: 90%;
+  border: 0 solid;
+  background-color: transparent;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #94a3b8;
+  outline: none;
+}
+.form-input-container button {
+  border: 0 solid;
+  background-color: transparent;
+}
+.search-result-list-container {
+  width: 60%;
+  list-style: none;
+  padding: 0;
+  margin-top: 3px;
+}
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.country-wide-cases-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 40px 0;
+}
+.home-covid-cases h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+.home-covid-cases p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+}
+.country-wide-confirmed-cases {
+  color: #ff073a;
+}
+.country-wide-active-cases {
+  color: #007bff;
+}
+.country-wide-recovered-cases {
+  color: #28a745;
+}
+.country-wide-deceased-cases {
+  color: #6c757d;
+}
+.state-wise-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f8fafc;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 24px 32px;
+}
+
+.state-wise-table-header p {
+  margin: 0;
+  width: 16%;
+  text-align: right;
+}
+
+.state-wise-covid-data-table-con {
+  border-radius: 12px;
+  border: 1px solid #475569;
+}
+.table-state-con {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+.table-state-con h3 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+}
+.state-wise-table-icon {
+  width: 20px;
+  height: 20px;
+}
+.table-state-con button {
+  background-color: transparent;
+  border: 0 solid;
+  outline: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.state-wise-table-list {
+  list-style: none;
+  padding: 0 32px;
+  margin: 0;
+  border-top: 1px solid #475569;
+}
+.home-loader {
+  min-height: 55vh !important;
+}
+@media screen and (max-width: 768px) {
+  .state-list-table-con {
+    width: 100%;
+    padding: 10px 0;
+    overflow-x: scroll;
+  }
+  .state-wise-covid-data-table-con {
+    width: 839px;
+  }
+}

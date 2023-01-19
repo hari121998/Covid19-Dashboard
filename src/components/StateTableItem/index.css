@@ -1,0 +1,37 @@
+.table-item-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 12px 0;
+}
+.table-item-container h3 {
+  width: 20%;
+  color: #f1f5f9;
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+.table-item-container p {
+  width: 16%;
+  text-align: right;
+  margin: 0;
+}
+.table-item-container .confirmed {
+  color: #ff073a;
+}
+
+.table-item-container .active {
+  color: #007bff;
+}
+.table-item-container .recovered {
+  color: #28a745;
+}
+.table-item-container .deceased {
+  color: #6c757d;
+}
+.table-item-container .population {
+  color: #94a3b8;
+}
