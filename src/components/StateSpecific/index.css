@@ -94,7 +94,7 @@
 .active-deceased {
   background-color: #212230;
 }
-.top-districts-container h3 {
+.top-districts-container .top-districts {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;

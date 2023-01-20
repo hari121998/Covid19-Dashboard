@@ -52,7 +52,7 @@
   text-align: center;
   margin: 40px 0;
 }
-.home-covid-cases h3 {
+.home-covid-cases .home-stat-heading {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;

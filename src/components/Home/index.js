@@ -124,7 +124,7 @@ class Home extends Component {
         testid="searchResultsUnorderedList"
         className="search-result-list-container"
       >
-        {filterSearchResults.slice(0, 4).map(eachState => (
+        {filterSearchResults.map(eachState => (
           <SearchResultItem key={eachState.state_code} stateItem={eachState} />
         ))}
       </ul>
@@ -146,7 +146,7 @@ class Home extends Component {
             testid="countryWideConfirmedCases"
             className="country-wide-confirmed-cases home-covid-cases"
           >
-            <h3>Confirmed</h3>
+            <p className="home-stat-heading">Confirmed</p>
             <img
               src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/check-mark_1_lxucvn.png"
               alt="country wide confirmed cases pic"
@@ -157,7 +157,7 @@ class Home extends Component {
             testid="countryWideActiveCases"
             className="country-wide-active-cases home-covid-cases"
           >
-            <h3>Active</h3>
+            <p className="home-stat-heading">Active</p>
             <img
               src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/protection_1_etorhj.png"
               alt="country wide active cases pic"
@@ -168,7 +168,7 @@ class Home extends Component {
             testid="countryWideRecoveredCases"
             className="country-wide-recovered-cases home-covid-cases"
           >
-            <h3>Recovered</h3>
+            <p className="home-stat-heading">Recovered</p>
             <img
               src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/recovered_1_ovzx0p.png"
               alt="country wide recovered cases pic"
@@ -179,7 +179,7 @@ class Home extends Component {
             testid="countryWideDeceasedCases"
             className="country-wide-deceased-cases home-covid-cases"
           >
-            <h3>Deceased</h3>
+            <p className="home-stat-heading">Deceased</p>
             <img
               src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/breathing_1_v6kzbi.png"
               alt="country wide deceased cases pic"

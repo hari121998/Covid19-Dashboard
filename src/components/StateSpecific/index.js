@@ -11,7 +11,6 @@ import {
   LineChart,
   Line,
 } from 'recharts'
-import dateFormat from 'dateformat'
 import Header from '../Header'
 import Footer from '../Footer'
 import StatesList from '../StatesData'
@@ -29,6 +28,21 @@ const activeStats = {
   recovered: 'RECOVERED',
   deceased: 'DECEASED',
 }
+
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
 
 class StateSpecific extends Component {
   state = {
@@ -52,7 +66,7 @@ class StateSpecific extends Component {
       const confirmed = total.confirmed ? total.confirmed : 0
       const recovered = total.recovered ? total.recovered : 0
       const deceased = total.deceased ? total.deceased : 0
-      const active = confirmed - (recovered - deceased)
+      const active = confirmed - (recovered + deceased)
       const districtStats = {
         districtName: keyName,
         confirmed,
@@ -112,11 +126,15 @@ class StateSpecific extends Component {
         const stateData = await response.json()
         const {total, meta, districts} = stateData[stateCode]
         const updatedDate = new Date(meta.last_updated)
-        const lastUpdatedDate = dateFormat(updatedDate, 'mmmm dS yyyy')
+        const getFullYear = updatedDate.getFullYear()
+        const getDate = updatedDate.getDate()
+        const getMonth = monthNames[updatedDate.getMonth()]
+
+        const lastUpdatedDate = `${getMonth} ${getDate} ${getFullYear}`
         const confirmed = total.confirmed ? total.confirmed : 0
         const recovered = total.recovered ? total.recovered : 0
         const deceased = total.deceased ? total.deceased : 0
-        const active = confirmed - (recovered - deceased)
+        const active = confirmed - (recovered + deceased)
         const totalCases = {
           confirmed,
           recovered,
@@ -211,8 +229,11 @@ class StateSpecific extends Component {
               axisLine={false}
               tickLine={false}
               tickFormatter={date => {
-                const newDate = dateFormat(date, 'dd mmm')
-                return newDate.toString()
+                const newDate = new Date(date)
+                const getDate = newDate.getDate()
+                const getMonth = monthNames[newDate.getMonth()].slice(0, 3)
+                const updatedNewDate = `${getDate} ${getMonth}`
+                return updatedNewDate
               }}
             />
             <Bar
@@ -484,82 +505,84 @@ class StateSpecific extends Component {
     const activeDistrictList = this.getActiveDistrictList()
     return (
       <div className="state-specific-route-container">
-        <div className="state-specific-state-name-tested">
-          <div className="state-specific-heading-update">
-            <h2>{stateName}</h2>
-            <p>{`Last Update on ${lastUpdatedDate}.`}</p>
-          </div>
+        <>
+          <div className="state-specific-state-name-tested">
+            <div className="state-specific-heading-update">
+              <h2>{stateName}</h2>
+              <p>{`Last Update on ${lastUpdatedDate}.`}</p>
+            </div>
 
-          <div>
-            <p className="state-tested-name">Tested</p>
-            <p className="state-tested-count">{totalTested}</p>
+            <div>
+              <p className="state-tested-name">Tested</p>
+              <p className="state-tested-count">{totalTested}</p>
+            </div>
           </div>
-        </div>
-        <ul className="state-specific-stats-list-container">
-          <li
-            testid="stateSpecificConfirmedCasesContainer"
-            className={`state-specific-confirmed-cases ${confirmedClass}`}
-            onClick={this.onClickConfirmed}
-          >
-            <h3>Confirmed</h3>
-            <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/check-mark_1_lxucvn.png"
-              alt="state specific confirmed cases pic"
-            />
-            <p>{totalCases.confirmed}</p>
-          </li>
-          <li
-            testid="stateSpecificActiveCasesContainer"
-            className={`state-specific-active-cases ${activeClass}`}
-            onClick={this.onClickActive}
-          >
-            <h3>Active</h3>
-            <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/protection_1_etorhj.png"
-              alt="state specific active cases pic"
-            />
-            <p>{totalCases.active}</p>
-          </li>
-          <li
-            testid="stateSpecificRecoveredCasesContainer"
-            className={`state-specific-recovered-cases ${recoveredClass}`}
-            onClick={this.onClickRecovered}
-          >
-            <h3>Recovered</h3>
-            <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/recovered_1_ovzx0p.png"
-              alt="state specific recovered cases pic"
-            />
-            <p>{totalCases.recovered}</p>
-          </li>
-          <li
-            testid="stateSpecificDeceasedCasesContainer"
-            className={`state-specific-deceased-cases ${deceasedClass}`}
-            onClick={this.onClickDeceased}
-          >
-            <h3>Deceased</h3>
-            <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/breathing_1_v6kzbi.png"
-              alt="state specific deceased cases pic"
-            />
-            <p>{totalCases.deceased}</p>
-          </li>
-        </ul>
-        <div className="top-districts-container">
-          <h3>Top Districts</h3>
-          <ul testid="topDistrictsUnorderedList">
-            {activeDistrictList.map(eachItem => (
-              <li key={eachItem.districtName}>
-                <span className="top-district-count">
-                  {eachItem[activeStat.toLowerCase()]}
-                </span>
-                <span className="top-district-name">
-                  {eachItem.districtName}
-                </span>
-              </li>
-            ))}
+          <ul className="state-specific-stats-list-container">
+            <li
+              testid="stateSpecificConfirmedCasesContainer"
+              className={`state-specific-confirmed-cases ${confirmedClass}`}
+              onClick={this.onClickConfirmed}
+            >
+              <p>Confirmed</p>
+              <img
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/check-mark_1_lxucvn.png"
+                alt="state specific confirmed cases pic"
+              />
+              <p>{totalCases.confirmed}</p>
+            </li>
+            <li
+              testid="stateSpecificActiveCasesContainer"
+              className={`state-specific-active-cases ${activeClass}`}
+              onClick={this.onClickActive}
+            >
+              <p>Active</p>
+              <img
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/protection_1_etorhj.png"
+                alt="state specific active cases pic"
+              />
+              <p>{totalCases.active}</p>
+            </li>
+            <li
+              testid="stateSpecificRecoveredCasesContainer"
+              className={`state-specific-recovered-cases ${recoveredClass}`}
+              onClick={this.onClickRecovered}
+            >
+              <p>Recovered</p>
+              <img
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/recovered_1_ovzx0p.png"
+                alt="state specific recovered cases pic"
+              />
+              <p>{totalCases.recovered}</p>
+            </li>
+            <li
+              testid="stateSpecificDeceasedCasesContainer"
+              className={`state-specific-deceased-cases ${deceasedClass}`}
+              onClick={this.onClickDeceased}
+            >
+              <p>Deceased</p>
+              <img
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/breathing_1_v6kzbi.png"
+                alt="state specific deceased cases pic"
+              />
+              <p>{totalCases.deceased}</p>
+            </li>
           </ul>
-        </div>
+          <div className="top-districts-container">
+            <h2 classsName="top-districts">Top Districts</h2>
+            <ul testid="topDistrictsUnorderedList">
+              {activeDistrictList.map(eachItem => (
+                <li key={eachItem.districtName}>
+                  <span className="top-district-count">
+                    {eachItem[activeStat.toLowerCase()]}
+                  </span>
+                  <span className="top-district-name">
+                    {eachItem.districtName}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
         {this.renderRechartsContainer()}
         <Footer />
       </div>
