@@ -38,7 +38,10 @@ class About extends Component {
         <h1>About</h1>
         <p className="update-para">Last update on march 28th 2021.</p>
         <h3>COVID-19 vaccines be ready for distribution</h3>
-        <ul testid="faqsUnorderedList" className="faq-unordered-list-container">
+        <ul
+          // testid="faqsUnorderedList"
+          className="faq-unordered-list-container"
+        >
           {faqsList.map(eachFaq => (
             <FaqItem key={eachFaq.qno} faqItem={eachFaq} />
           ))}
@@ -49,7 +52,10 @@ class About extends Component {
   }
 
   renderLoader = () => (
-    <div className="loader-container" testid="aboutRouteLoader">
+    <div
+      className="loader-container"
+      // testid="aboutRouteLoader"
+    >
       <Loader color="#007BFF" type="TailSpin" height="50" width="50" />
     </div>
   )

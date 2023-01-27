@@ -1,5 +1,5 @@
 .home-page-container {
-  padding: 64px 150px;
+  padding: 50px 100px;
   background-color: #161625;
   min-height: 86.5vh;
 }
@@ -130,7 +130,24 @@
 .home-loader {
   min-height: 55vh !important;
 }
-@media screen and (max-width: 768px) {
+.state-list-table-con {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 1025px) {
+  .home-page-container {
+    padding: 50px 50px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .home-page-container {
+    padding: 50px 30px;
+  }
+  .country-wide-cases-con {
+    flex-wrap: wrap;
+  }
+  .home-covid-cases {
+    width: 50%;
+  }
   .state-list-table-con {
     width: 100%;
     padding: 10px 0;
@@ -138,5 +155,19 @@
   }
   .state-wise-covid-data-table-con {
     width: 839px;
+  }
+  .form-input-container {
+    width: 80%;
+  }
+  .search-result-list-container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .form-input-container {
+    width: 100%;
+  }
+  .search-result-list-container {
+    width: 100%;
   }
 }

@@ -1,6 +1,6 @@
 .about-page-container {
   background-color: #161625;
-  padding: 64px 150px;
+  padding: 50px 100px;
 }
 .about-page-container h1 {
   font-family: 'Roboto';
@@ -29,4 +29,40 @@
 .faq-unordered-list-container {
   list-style: none;
   padding: 0;
+}
+@media screen and (max-width: 1025px) {
+  .about-page-container {
+    padding: 50px 60px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .about-page-container {
+    padding: 40px 30px;
+  }
+}
+@media screen and (max-width: 481px) {
+  .about-page-container {
+    padding: 20px 25px;
+  }
+  .about-page-container h1 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 6px;
+  }
+  .update-para {
+    font-size: 16px;
+  }
+  .about-page-container h3 {
+    font-size: 20px;
+    margin: 16px 0;
+  }
+  .faq-item-container {
+    font-size: 14px;
+  }
+  .faq-item-container p {
+    margin: 0px 0 12px 0;
+  }
+  .faq-unordered-list-container {
+    margin: 16px 0 22px 0;
+  }
 }

@@ -161,13 +161,19 @@ class StateSpecific extends Component {
   }
 
   renderStateSpecificLoader = () => (
-    <div testid="stateDetailsLoader" className="loader-container">
+    <div
+      //  testid="stateDetailsLoader"
+      className="loader-container"
+    >
       <Loader color="#007BFF" type="TailSpin" height="50" width="50" />
     </div>
   )
 
   renderTimelineLoader = () => (
-    <div testid="timelinesDataLoader" className="loader-container">
+    <div
+      // testid="timelinesDataLoader"
+      className="loader-container"
+    >
       <Loader color="#007BFF" type="TailSpin" height="50" width="50" />
     </div>
   )
@@ -217,7 +223,7 @@ class StateSpecific extends Component {
     return (
       <>
         <div className="specific-covid-bar-chart-con">
-          <BarChart width={800} height={350} data={topTenCovid19}>
+          <BarChart width={800} height={400} data={topTenCovid19}>
             <XAxis
               tick={{
                 fill: `${barColor}`,
@@ -258,7 +264,10 @@ class StateSpecific extends Component {
             </Bar>
           </BarChart>
         </div>
-        <div testid="lineChartsContainer" className="line-charts-container">
+        <div
+          // testid="lineChartsContainer"
+          className="line-charts-container"
+        >
           <h3 className="daily-spread-heading">Daily Spread Trends</h3>
           <div className="confirmed-line-chart-con line-chart-con ">
             <LineChart
@@ -519,7 +528,7 @@ class StateSpecific extends Component {
           </div>
           <ul className="state-specific-stats-list-container">
             <li
-              testid="stateSpecificConfirmedCasesContainer"
+              //   testid="stateSpecificConfirmedCasesContainer"
               className={`state-specific-confirmed-cases ${confirmedClass}`}
               onClick={this.onClickConfirmed}
             >
@@ -531,7 +540,7 @@ class StateSpecific extends Component {
               <p>{totalCases.confirmed}</p>
             </li>
             <li
-              testid="stateSpecificActiveCasesContainer"
+              //   testid="stateSpecificActiveCasesContainer"
               className={`state-specific-active-cases ${activeClass}`}
               onClick={this.onClickActive}
             >
@@ -543,7 +552,7 @@ class StateSpecific extends Component {
               <p>{totalCases.active}</p>
             </li>
             <li
-              testid="stateSpecificRecoveredCasesContainer"
+              //   testid="stateSpecificRecoveredCasesContainer"
               className={`state-specific-recovered-cases ${recoveredClass}`}
               onClick={this.onClickRecovered}
             >
@@ -555,7 +564,7 @@ class StateSpecific extends Component {
               <p>{totalCases.recovered}</p>
             </li>
             <li
-              testid="stateSpecificDeceasedCasesContainer"
+              //   testid="stateSpecificDeceasedCasesContainer"
               className={`state-specific-deceased-cases ${deceasedClass}`}
               onClick={this.onClickDeceased}
             >
@@ -568,8 +577,10 @@ class StateSpecific extends Component {
             </li>
           </ul>
           <div className="top-districts-container">
-            <h2 classsName="top-districts">Top Districts</h2>
-            <ul testid="topDistrictsUnorderedList">
+            <h1 className="top-districts">Top Districts</h1>
+            <ul
+            // testid="topDistrictsUnorderedList"
+            >
               {activeDistrictList.map(eachItem => (
                 <li key={eachItem.districtName}>
                   <span className="top-district-count">

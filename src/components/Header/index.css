@@ -1,5 +1,5 @@
 .header-container {
-  padding: 15px 150px;
+  padding: 28px 100px;
   background-color: #1e1e30;
   display: flex;
   justify-content: space-between;
@@ -14,6 +14,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  margin: 0;
 }
 .header-heading span {
   color: #3b82f6;
@@ -46,41 +47,22 @@
 .header-pop-up-container {
   display: none;
 }
-.trigger-button {
-  background-color: transparent;
-  cursor: pointer;
-  border: 0 solid;
-  outline: none;
-}
-.popup-modal-container ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-.popup-modal-container ul li {
-  margin-right: 40px;
-}
+
 .popup-modal-container {
-  background-color: #161625;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-}
-.nav-link-popup-con {
-  font-family: 'Roboto';
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: -0.355556px;
-  color: #94a3b8;
-  text-decoration: none;
+  display: none;
 }
 .nav-menu-icon {
   display: none;
 }
+@media screen and (max-width: 1025px) {
+  .header-container {
+    padding: 28px 60px;
+  }
+}
+
 @media screen and (max-width: 769px) {
   .header-container {
-    padding: 10px 25px;
+    padding: 14px 30px;
   }
   .nav-menu-icon {
     display: block;
@@ -90,5 +72,44 @@
   }
   .header-pop-up-container {
     display: block;
+  }
+  .trigger-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0 solid;
+    outline: none;
+  }
+
+  .popup-modal-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  .popup-modal-container ul li {
+    margin-right: 40px;
+  }
+  .popup-modal-container {
+    background-color: #161625;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+  }
+  .nav-link-popup-con {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.355556px;
+    color: #94a3b8;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .header-container {
+    padding: 14px 25px;
+  }
+  .header-heading {
+    font-size: 18px;
   }
 }

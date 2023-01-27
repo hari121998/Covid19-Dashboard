@@ -95,10 +95,6 @@ class Home extends Component {
     this.setState({countryCasesData: ascendingSort})
   }
 
-  //   onBlurSearchValue = () => {
-  //     this.setState({displaySearchResults: false})
-  //   }
-
   onChangeSearchValue = event => {
     if (event.target.value === '') {
       this.setState({
@@ -121,7 +117,7 @@ class Home extends Component {
 
     return (
       <ul
-        testid="searchResultsUnorderedList"
+        // testid="searchResultsUnorderedList"
         className="search-result-list-container"
       >
         {filterSearchResults.map(eachState => (
@@ -143,7 +139,7 @@ class Home extends Component {
       <>
         <div className="country-wide-cases-con">
           <div
-            testid="countryWideConfirmedCases"
+            // testid="countryWideConfirmedCases"
             className="country-wide-confirmed-cases home-covid-cases"
           >
             <p className="home-stat-heading">Confirmed</p>
@@ -154,7 +150,7 @@ class Home extends Component {
             <p>{totalConfirmed}</p>
           </div>
           <div
-            testid="countryWideActiveCases"
+            // testid="countryWideActiveCases"
             className="country-wide-active-cases home-covid-cases"
           >
             <p className="home-stat-heading">Active</p>
@@ -165,7 +161,7 @@ class Home extends Component {
             <p>{totalActive}</p>
           </div>
           <div
-            testid="countryWideRecoveredCases"
+            // testid="countryWideRecoveredCases"
             className="country-wide-recovered-cases home-covid-cases"
           >
             <p className="home-stat-heading">Recovered</p>
@@ -176,7 +172,7 @@ class Home extends Component {
             <p>{totalRecovered}</p>
           </div>
           <div
-            testid="countryWideDeceasedCases"
+            // testid="countryWideDeceasedCases"
             className="country-wide-deceased-cases home-covid-cases"
           >
             <p className="home-stat-heading">Deceased</p>
@@ -189,21 +185,21 @@ class Home extends Component {
         </div>
         <div className="state-list-table-con">
           <div
-            testid="stateWiseCovidDataTable"
+            // testid="stateWiseCovidDataTable"
             className="state-wise-covid-data-table-con"
           >
             <div className="state-wise-table-header">
               <div className="table-state-con">
                 <h3>States/UT</h3>
                 <button
-                  testid="ascendingSort"
+                  //   testid="ascendingSort"
                   type="button"
                   onClick={this.ascendingSort}
                 >
                   <FcGenericSortingAsc className="state-wise-table-icon" />
                 </button>
                 <button
-                  testid="descendingSort"
+                  //   testid="descendingSort"
                   type="button"
                   onClick={this.descendingSort}
                 >
@@ -256,7 +252,10 @@ class Home extends Component {
   }
 
   renderLoader = () => (
-    <div testid="homeRouteLoader" className="loader-container home-loader">
+    <div
+      //  testid="homeRouteLoader"
+      className="loader-container home-loader"
+    >
       <Loader color="#007BFF" type="TailSpin" height="50" width="50" />
     </div>
   )
