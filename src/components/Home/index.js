@@ -144,7 +144,7 @@ class Home extends Component {
           >
             <p className="home-stat-heading">Confirmed</p>
             <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/check-mark_1_lxucvn.png"
+              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/confirmed_h2sw0x.png"
               alt="country wide confirmed cases pic"
             />
             <p>{totalConfirmed}</p>
@@ -155,7 +155,7 @@ class Home extends Component {
           >
             <p className="home-stat-heading">Active</p>
             <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/protection_1_etorhj.png"
+              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/active_klnlbx.png"
               alt="country wide active cases pic"
             />
             <p>{totalActive}</p>
@@ -166,7 +166,7 @@ class Home extends Component {
           >
             <p className="home-stat-heading">Recovered</p>
             <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/recovered_1_ovzx0p.png"
+              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/recovered_utaw9i.png"
               alt="country wide recovered cases pic"
             />
             <p>{totalRecovered}</p>
@@ -177,7 +177,7 @@ class Home extends Component {
           >
             <p className="home-stat-heading">Deceased</p>
             <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/breathing_1_v6kzbi.png"
+              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/deceased_xuqaom.png"
               alt="country wide deceased cases pic"
             />
             <p>{totalDeceased}</p>

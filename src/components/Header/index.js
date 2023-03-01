@@ -19,6 +19,9 @@ class Header extends Component {
         <Link to="/" className="nav-link-popup-con">
           <li>Home</li>
         </Link>
+        <Link to="/vaccination" className="nav-link-popup-con">
+          <li>Vaccination</li>
+        </Link>
         <Link to="/about" className="nav-link-popup-con">
           <li>About</li>
         </Link>
@@ -29,7 +32,7 @@ class Header extends Component {
         onClick={this.onClickCloseBtn}
       >
         <img
-          src="https://res.cloudinary.com/dnddnchcm/image/upload/v1674102787/close-icon_jeodi0.png"
+          src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/close_aiyshj.png"
           alt="close icon"
         />
       </button>
@@ -41,6 +44,8 @@ class Header extends Component {
     const {closeBtn} = this.state
     const activeHome = activePage === 'home' ? 'active-home' : ''
     const activeAbout = activePage === 'about' ? 'active-about' : ''
+    const activeVaccination =
+      activePage === 'vaccination' ? 'active-vaccination' : ''
 
     return (
       <>
@@ -57,6 +62,14 @@ class Header extends Component {
               </Link>
             </li>
             <li>
+              <Link
+                to="/vaccination"
+                className={`header-nav-link ${activeVaccination}`}
+              >
+                Vaccination
+              </Link>
+            </li>
+            <li>
               <Link to="/about" className={`header-nav-link ${activeAbout}`}>
                 About
               </Link>
@@ -68,7 +81,7 @@ class Header extends Component {
             className="trigger-button nav-menu-icon"
           >
             <img
-              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1674102339/nav-link-icon_vnodif.png"
+              src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/navButton_chmxsa.png"
               alt="nav menu icon"
             />
           </button>

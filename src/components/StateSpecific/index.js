@@ -120,16 +120,17 @@ class StateSpecific extends Component {
 
     if (stateItem) {
       const stateName = stateItem.state_name
+      const stateImageUrl = stateItem.imageUrl
       const url = 'https://apis.ccbp.in/covid19-state-wise-data'
       const response = await fetch(url)
       if (response.ok) {
         const stateData = await response.json()
         const {total, meta, districts} = stateData[stateCode]
+
         const updatedDate = new Date(meta.last_updated)
         const getFullYear = updatedDate.getFullYear()
         const getDate = updatedDate.getDate()
         const getMonth = monthNames[updatedDate.getMonth()]
-
         const lastUpdatedDate = `${getMonth} ${getDate} ${getFullYear}`
         const confirmed = total.confirmed ? total.confirmed : 0
         const recovered = total.recovered ? total.recovered : 0
@@ -141,6 +142,7 @@ class StateSpecific extends Component {
           deceased,
           active,
         }
+        const population = meta.population ? meta.population : 0
         const totalTested = total.tested ? total.tested : 0
         const districtWiseData = this.getDistrictWiseData(districts)
         const specificStateData = {
@@ -149,6 +151,8 @@ class StateSpecific extends Component {
           totalTested,
           districts: districtWiseData,
           stateName,
+          stateImageUrl,
+          statePopulation: population,
         }
         this.setState({
           statsData: specificStateData,
@@ -500,9 +504,32 @@ class StateSpecific extends Component {
     return newTimelineData
   }
 
+  getTopDistricstColor = () => {
+    const {activeStat} = this.state
+    switch (activeStat) {
+      case activeStats.confirmed:
+        return 'confirmed-color'
+      case activeStats.recovered:
+        return 'recovered-color'
+      case activeStats.deceased:
+        return 'deceased-color'
+      case activeStats.active:
+        return 'active-color'
+      default:
+        return null
+    }
+  }
+
   renderStateSpecificData = () => {
     const {statsData, activeStat} = this.state
-    const {lastUpdatedDate, stateName, totalTested, totalCases} = statsData
+    const {
+      lastUpdatedDate,
+      stateName,
+      totalTested,
+      totalCases,
+      statePopulation,
+      stateImageUrl,
+    } = statsData
     const confirmedClass =
       activeStat === activeStats.confirmed ? 'active-confirmed' : ''
     const activeClass = activeStat === activeStats.active ? 'active-active' : ''
@@ -512,6 +539,8 @@ class StateSpecific extends Component {
       activeStat === activeStats.deceased ? 'active-deceased' : ''
 
     const activeDistrictList = this.getActiveDistrictList()
+    const topDistrictsColor = this.getTopDistricstColor()
+    console.log(topDistrictsColor)
     return (
       <div className="state-specific-route-container">
         <>
@@ -534,7 +563,7 @@ class StateSpecific extends Component {
             >
               <p>Confirmed</p>
               <img
-                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/check-mark_1_lxucvn.png"
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/confirmed_h2sw0x.png"
                 alt="state specific confirmed cases pic"
               />
               <p>{totalCases.confirmed}</p>
@@ -546,7 +575,7 @@ class StateSpecific extends Component {
             >
               <p>Active</p>
               <img
-                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/protection_1_etorhj.png"
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/active_klnlbx.png"
                 alt="state specific active cases pic"
               />
               <p>{totalCases.active}</p>
@@ -558,7 +587,7 @@ class StateSpecific extends Component {
             >
               <p>Recovered</p>
               <img
-                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/recovered_1_ovzx0p.png"
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/recovered_utaw9i.png"
                 alt="state specific recovered cases pic"
               />
               <p>{totalCases.recovered}</p>
@@ -570,14 +599,32 @@ class StateSpecific extends Component {
             >
               <p>Deceased</p>
               <img
-                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1673075705/breathing_1_v6kzbi.png"
+                src="https://res.cloudinary.com/dnddnchcm/image/upload/v1675998597/covid19/deceased_xuqaom.png"
                 alt="state specific deceased cases pic"
               />
               <p>{totalCases.deceased}</p>
             </li>
           </ul>
+          <div className="state-map-report-container">
+            <img src={stateImageUrl} alt={`${stateName} Map`} />
+            <div>
+              <p className="report">NCP report </p>
+              <div className="map-report-con">
+                <div>
+                  <p className="map-headings">Population</p>
+                  <p className="report">{statePopulation}</p>
+                </div>
+                <div>
+                  <p className="map-headings">Tested</p>
+                  <p className="report">{totalTested}</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="top-districts-container">
-            <h1 className="top-districts">Top Districts</h1>
+            <h1 className={`top-districts ${topDistrictsColor}`}>
+              Top Districts
+            </h1>
             <ul
             // testid="topDistrictsUnorderedList"
             >

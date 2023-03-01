@@ -37,7 +37,8 @@
   color: #94a3b8;
 }
 .active-home,
-.active-about {
+.active-about,
+.active-vaccination {
   font-weight: 500;
   color: #f8fafc;
 }
